@@ -19,6 +19,11 @@ with open(nm_file_path, 'r') as json_file:
     images_names = json.load(json_file)
 
 
+@app.route('/',methods=['GET'])
+def home():
+    return jsonify(['Awagaman is alive and running perfectly!'])
+
+
 @app.route('/encode_face', methods=['POST'])
 def encode_face():
     global images_encoding
