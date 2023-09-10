@@ -1,4 +1,3 @@
---upgrade pip 
 cmake
 face_recognition
 opencv-python
