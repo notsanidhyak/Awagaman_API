@@ -1,4 +1,3 @@
 face_recognition
-json
 opencv-python
 flask
