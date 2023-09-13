@@ -9,7 +9,7 @@ COPY . /app
 
 # Install build tools and compilers
 RUN apt-get update && \
-    apt-get install -y build-essential cmake &&\
+    apt-get install -y build-essential cmake && \
     apt-get install ffmpeg libsm6 libxext6  -y
 
 # Install pip requirements
@@ -31,5 +31,4 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Command to start your application
-ENTRYPOINT [ "python3" ]
-CMD ["app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5002", "app:app"]

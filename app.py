@@ -104,4 +104,5 @@ def detect_faces():
         return jsonify(detected_face_names)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.config['ENV'] = 'production'  # Set Flask to production mode
+    app.run()
